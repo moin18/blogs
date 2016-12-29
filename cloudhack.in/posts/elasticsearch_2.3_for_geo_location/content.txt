@@ -1,0 +1,42 @@
+Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterprise-grade search engine. Accessible through an extensive and elaborate API, Elasticsearch can power extremely fast searches that support your data discovery applications.
+ElasticSearch is able to achieve fast search responses because, instead of searching the text directly, it searches an index instead. This is like retrieving pages in a book related to a keyword by scanning the index at the back of a book, as opposed to searching every word of every page of the book. This type of index is called an inverted index, because it inverts a page-centric data structure (page->words) to a keyword-centric data structure (word->pages). ElasticSearch uses Apache Lucene to create and manage this inverted index.
+ElasticSearch For Geolocations
+In this article we will keep our scope limited to the features provided by Elasticsearch for the geolocation data. The beauty of Elasticsearch is that it allows you to combine geolocation with full-text search, structured search, and analytics.
+For instance: show me cabs that are of luxury type, are within a radius of 5 KM, and are having minimum fare, and then rank them by a combination of user rating. Another example: show me nearest hospital, opened at 11 P.M., and has emergency facility.
+Elasticsearch Example
+Implementation of Elasticsearch
+For dealing with Geo data, ElasticSearch supports two data types:
+Geo-points allow you to find points within a certain distance of another point, to calculate distances between two points for sorting or relevance scoring, or to aggregate into a grid to display on a map.
+Geo-shapes, on the other hand, are used purely for filtering. They can be used to decide whether two shapes overlap, or whether one shape completely contains other shapes.
+Geo Point data type
+Fields of type geo_point accept latitude-longitude pairs, which can be used:
+to find geo-points within a bounding box, within a certain distance of a central point, within a polygon, or within a geohash cell.
+to aggregate documents by geographically or by distance from a central point.
+to integrate distance into a document’s relevance score.
+to sort documents by distance.
+There are four ways to specify a geo-point:
+Geo-point expressed as an object, with lat and lon keys.
+Geo-point expressed as a string with the format: "lat,lon".
+Geo-point expressed as a geohash.
+Geo-point expressed as an array with the format: [ lon, lat]
+Refer Elasticsearch: Geo-Point document for more information related to Geo-Points.
+Note: String geo-points are ordered as lat,lon, while array geo-points are ordered as the reverse: lon,lat.
+Geo Shape data type
+The geo_shape datatype facilitates the indexing of and searching with arbitrary geo shapes such as rectangles and polygons. It should be used when either the data being indexed or the queries being executed contain shapes other than just points. You can query documents using this type using geo_shape Query.
+Refer Elasticsearch: Geo-Shapes document for detailed information.
+Geohashes
+Geohashes are a way of encoding lat/lon points as strings. The original intention was to have a URL-friendly way of specifying geolocations, but geohashes have turned out to be a useful way of indexing geo-points and geo-shapes in databases. Geohashes divide the world into a grid of 32 cells—4 rows and 8 columns—each represented by a letter or number.
+Refer Elasticsearch: Geohashes document for further information with examples.
+Geo Aggregations
+Geo-aggregations can be used to cluster geo-points into more manageable buckets. For example: to present information to the user on a map. Three aggregations work with fields of type geo_point:
+geo_distance: Groups documents into concentric circles around a central point.
+geohash_grid: Groups documents by geohash cell, for display on a map.
+geo_bounds: Returns the lat/lon coordinates of a bounding box that would encompass all of the geo-points. This is useful for choosing the correct zoom level when displaying a map.
+Check: MySQL, Logstash and Elasticsearch: Sync Realtime Geolocation Updates to know more on how to sync realtime updating data in MySQL with Elasticsearch.
+Referrences
+Elasticsearch: Geo-Point
+Elasticsearch: Geo-Shapes
+Elasticsearch: Geohashes
+What is Elasticsearch?
+Basic Elastic search concepts?
+ 

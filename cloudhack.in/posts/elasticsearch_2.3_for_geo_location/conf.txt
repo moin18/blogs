@@ -1,0 +1,7 @@
+URL Endpoint: elasticsearch-for-geo-location
+
+Title: Elasticsearch 2.3 for Geo Location
+
+Description: The beauty of Elasticsearch is that it allows you to combine geolocation with full-text search, structured search, and analytics. Geo-points and Geo-shapes are two data types that Elasticsearch supports to deal with Geo data. 
+
+Keywords: elasticsearch, geolocation, geo data, geo shape, geohashes, geo aggregation

@@ -1,0 +1,21 @@
+In this article we will go through the step by step process on how to sync updates on MySQL with Elasticsearch in real-time. Firstly, let's get through the brief overview of the components we will be using
+MySQL: MySQL is the relational database engine. In our example, it is the primary data store which we will sync in realtime on Elasticsearch with the help of Logstash.
+Logstash: Logstash is a data pipeline that helps you process logs and other event data from a variety of systems. We will make MySQL connection with the help of jdbc-mysl connector.
+Elasticsearch: Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterprise-grade search engine. Elasticsearch can power extremely fast searches that support your data discovery applications. Read: Elasticsearch 2.3 for-Geo Location for the in-depth knowledge of Elasticsearch for the geolocation data.
+Shield: Elasticsearch do not comes up with any authentication mechanism by default. We will be using shield to protect our data over Elasticsearch using basic authentication.
+Purpose
+Recently I came across the project in which I had to find the coordinates of the IOT devices in particular range of  some userdefined coordinates. MySQL was our primary datasource in which coordinates of the devices keeps on updating in the realtime. When it comes to dealing with geolocation data, Elasticsearch was my first choice and it was the right choice that I made.
+Note: Elasticsearch 2.0+ verisons only supports geolocation filtering.
+Architectural Overview
+MySQL, Logstash, Elasticsearch Architecture
+MySQL, Logstash, Elasticsearch Architecture
+MySQL is our primary data store. Elasticsearch will act as secondary data store on which all the geolocation related filtering will take place. Logstash will act as an agent to sync data from MySQL to Elasticsearch.
+Note: It is recommended not to use elasticsearch-rivers for syncing data. I will not go deeper into this. You can found a lot of information over the internet on this if you wish to know more about rivers.
+Below is the step by step process of configuring the instances on Ubuntu machine. I am assuming that your primary data is already stored on the MySQL. The models structure of my table that I want to sync is as:
+MySQL Table Schema
+MySQL Table Schema
+Step 1: Install Elasticsearch
+[snippet id="40"]
+Open the URL: http://YOUR.ELASTIC.SERACH.IP:9200. If you do not see any response, check your logs at: /var/log/elasticsearch/CLUSTER_NAME.log
+Step 2: Setting up Logstash
+Will be updating soon once I have time. In case you are reading this and need quick update, please leave a comment I will try to update this faster. Thanks :)

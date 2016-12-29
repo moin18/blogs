@@ -1,0 +1,9 @@
+URL endpoint: apache-kafka-vs-rabbitmq
+
+Title: Apache Kafka v/s RabbitMQ - Message Queue Comparison
+
+Description: Message Oriented Middleware or MOM concept involves the exchange of data between different applications using messages asynchronously. Using this mechanism, applications are decoupled and senders and receivers exist without the knowledge of each other. It becomes the responsibility of the messaging system (Message Oriented Middleware) to transfer the messages between applications. Queues allow you to store metadata for processing jobs at a later date. They can aid in the development of SOA (service-oriented architecture) by providing the flexibility to defer tasks to separate processes. When applied correctly, queues can dramatically increase the user experience of a web site by reducing load times.
+
+Keywords: apache kafka, rabbitmq, message queues
+
+

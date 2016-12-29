@@ -1,0 +1,51 @@
+Message Queue: Overview
+Message Oriented Middleware or MOM concept involves the exchange of data between different applications using messages asynchronously. Using this mechanism, applications are decoupled and senders and receivers exist without the knowledge of each other. It becomes the responsibility of the messaging system (Message Oriented Middleware) to transfer the messages between applications. Queues allow you to store metadata for processing jobs at a later date. They can aid in the development of SOA (service-oriented architecture) by providing the flexibility to defer tasks to separate processes. When applied correctly, queues can dramatically increase the user experience of a web site by reducing load times.
+Message Queue Architecture
+Message Queue Architecture
+Use cases of Message Queue
+Asynchronous: A lot of times, you don’t want to or need to process a message immediately. Message queues enable asynchronous processing, which allows you to put a message on the queue without processing it immediately. Queue up as many messages as you like, then process them at your leisure.
+Decoupling: It’s extremely difficult to predict, at the start of a project, what the future needs of the project will be. By introducing a layer in between processes, message queues create an implicit, data-based interface that both processes implement. This allows you to extend and modify these processes independently, by simply ensuring they adhere to the same interface requirements.
+Resilience: When part of your architecture fails, it doesn’t need to take the entire system down with it. Message queues decouple processes, so if a process that is processing messages from the queue fails, messages can still be added to the queue to be processed when the system recovers. This ability to accept requests that will be retried or processed at a later date is often the difference between an inconvenienced customer and a frustrated customer.
+Redundancy: Sometimes processes fail when processing data. Unless that data is persisted, it’s lost forever. Queues mitigate this by persisting data until it has been fully processed. The put-get-delete paradigm, which many message queues use, requires a process to explicitly indicate that it has finished processing a message before the message is removed from the queue, ensuring your data is kept safe until you’re done with it.
+Delivery Guarantees:The redundancy provided by message queues guarantees that a message will be processed eventually, so long as a process is reading the queue. No matter how many processes are pulling data from the queue, each message will only be processed a single time. This is made possible because retrieving a message “reserves” that message, temporarily removing it from the queue. Unless the client specifically states that it’s finished with that message, the message will be placed back on the queue to be processed after a configurable amount of time.
+Ordering Guarantees: In a lot of situations, the order with which data is processed is important. Message queues are inherently ordered, and capable of providing guarantees that data will be processed in a specific order.
+Scalability: Because message queues decouple your processes, it’s easy to scale up the rate with which messages are added to the queue or processed; simply add another process. No code needs to be changed, no configurations need to be tweaked. Scaling is as simple as adding more power.
+Elasticity & Spikability: When your application hits the front page of Hacker News, you’re going to see unusual levels of traffic. Your application needs to be able to keep functioning with this increased load, but the traffic is anomaly, not the standard; it’s wasteful to have enough resources on standby to handle these spikes. Message queues will allow beleaguered components to struggle through the increased load, instead of getting overloaded with requests and failing completely.
+Buffering: In any non-trivial system, there are going to be components that require different processing times. For example, it takes less time to upload an image than it does to apply a filter to it. Message queues help these tasks operate at peak efficiency by offering a buffer layer–the process writing to the queue can write as fast as it’s able to, instead of being constrained by the readiness of the process reading from the queue. This buffer helps control and optimize the speed with which data flows through your system.
+Understanding Data Flow: In a distributed system, getting an overall sense of how long user actions take to complete and why is a huge problem. Message queues, through the rate with which they are processed, help to easily identify under-performing processes or areas where the data flow is not optimal.
+ 
+RabbitMQ
+RabbitMQ is one of the leading open-source messaging systems. It is written in Erlang, implements AMQP and is a very popular choice when messaging is involved. It supports both message persistence and replication, with well documented behaviour in case of e.g. partitions.
+We’ll be testing a 3-node Rabbit cluster. To be sure that sends complete successfully, we’ll be using publisher confirms, a Rabbit extension to AMQP. The confirmations are cluster-wide, so this gives us pretty strong guarantees: that messages will be both written to disk, and replicated to the cluster (see the docs).
+Such strong guarantees are probably one of the reasons for poor performance. A single-thread, single-node gives us 310 msgs/s sent&received. This scales nicely as we add nodes, up to 1 600 msgs/s:
+RabbitMQ Test
+RabbitMQ Test
+Kafka
+Kafka takes a different approach to messaging. The server itself is a streaming publish-subscribe system. Each Kafka topic can have multiple partitions; by using more partitions, the consumers of the messages (and the throughput) may be scaled and concurrency of processing increased.
+On top of publish-subscribe with partitions, a point-to-point messaging system is built, by putting a significant amount of logic into the consumers (in the other messaging systems we’ve looked at, it was the server that contained most of the message-consumed-by-one-consumer logic; here it’s the consumer).
+Each consumer in a consumer group reads messages from a number of dedicated partitions; hence it doesn’t make sense to have more consumer threads than partitions. Messages aren’t acknowledged on server (which is a very important design difference!), but instead message offsets processed by consumers are written to Zookeeper, either automatically in the background, or manually. This allows Kafka to achieve much better performance.
+Kafka v/s RabbitMQ v/s Other Queuing Service
+As always, which message queue you choose depends on specific project requirements. :
+SQS is a service, so especially if you are using the AWS cloud, it’s an easy choice: good performance and no setup required
+if you are using Mongo, it is easy to build a replicated message queue on top of it, without the need to create and maintain a separate messaging cluster.
+HornetQ has great performance with a very rich messaging interface and routing options
+if you want to have high persistence guarantees, RabbitMQ ensures replication across the cluster and on disk on message send.
+Kafka offers the best performance and scalability.
+When looking only at the throughput, Kafka is a clear winner (unless we include SQS with multiple nodes, but as mentioned, that would be unfair):
+Kafka vs RabbitMQ v/s Others Performance
+Kafka vs RabbitMQ v/s Others Performance
+It is also interesting to see how sending more messages in a batch improves the throughput. As already mentioned, when increasing the batch size from 10 to 100, Rabbit gets a 2x speedup, HornetQ a 1.2x speedup, and Kafka a 2.5x speedup, achieving about 89 000 msgs/s!
+Kafka v/s RabbitMQ Throughput
+
+Conclusion
+Use Kafka if you have a fire hose of events (100k+/sec) you need delivered in partitioned order 'at least once' with a mix of online and batch consumers, you want to be able to re-read messages, you can deal with current limitations around node-level HA (or can use trunk code), and/or you don't mind supporting incubator-level software yourself via forums/IRC.
+Use RabbitMQ if you have messages (20k+/sec) that need to be routed in complex ways to consumers, you want per-message delivery guarantees, you don't care about ordered delivery, you need HA at the cluster-node level now, and/or you need 24x7 paid support in addition to forums/IRC.
+Both have similar distributed deployment goals but they differ on message model semantics.
+Neither offers great "filter/query" capabilities
+Referrences
+Exploring Message Brokers
+System Design and Big Data: Chapter 12 - RabbitMQ v/s Kafka
+Evaluating Persistent Replicated Message Queues
+VM Ware's RabbitMQ v/s Linkedin's Kafka
+Message Queuing (MSMQ)
+Top 10 Uses For Message Queue

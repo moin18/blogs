@@ -1,0 +1,25 @@
+<p style="text-align: justify;">In this article we will go through the step by step process on how to sync updates on MySQL with Elasticsearch in real-time. Firstly, let's get through the brief overview of the components we will be using</p>
+
+<ol style="text-align: justify;">
+     <li><a href="https://dev.mysql.com/doc/refman/5.7/en/features.html" target="_blank">MySQL</a>: MySQL is the relational database engine. In our example, it is the primary data store which we will sync in realtime on Elasticsearch with the help of Logstash.</li>
+     <li><a href="https://www.elastic.co/products/logstash" target="_blank">Logstash</a>: Logstash is a data pipeline that helps you process logs and other event data from a variety of systems. We will make MySQL connection with the help of jdbc-mysl connector.</li>
+     <li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html" target="_blank">Elasticsearch</a>: Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterprise-grade search engine. Elasticsearch can power extremely fast searches that support your data discovery applications. Read: <a href="http://www.cloudhack.in/index.php/2016/05/26/elasticsearch-for-geo-location/" target="_blank">Elasticsearch 2.3 for-Geo Location</a> for the in-depth knowledge of Elasticsearch for the geolocation data.</li>
+     <li><a href="https://www.elastic.co/products/shield" target="_blank">Shield</a>: Elasticsearch do not comes up with any authentication mechanism by default. We will be using shield to protect our data over Elasticsearch using basic authentication.</li>
+</ol>
+<h2 style="text-align: justify;">Purpose</h2>
+<p style="text-align: justify;">Recently I came across the project in which I had to find the coordinates of the IOT devices in particular range of  some userdefined coordinates. MySQL was our primary datasource in which coordinates of the devices keeps on updating in the realtime. When it comes to dealing with geolocation data, Elasticsearch was my first choice and it was the right choice that I made.</p>
+<p style="text-align: justify;"><em>Note</em>: Elasticsearch 2.0+ verisons only supports geolocation filtering.</p>
+
+<h2 style="text-align: justify;">Architectural Overview</h2>
+[caption id="attachment_135" align="aligncenter" width="1384"]<img class="wp-image-135 size-full" src="http://www.cloudhack.in/wp-content/uploads/2016/06/mysl-logstash-elasticseacrh.png" alt="MySQL, Logstash, Elasticsearch Architecture" width="1384" height="371" /> MySQL, Logstash, Elasticsearch Architecture[/caption]
+<p style="text-align: justify;">MySQL is our primary data store. Elasticsearch will act as secondary data store on which all the geolocation related filtering will take place. Logstash will act as an agent to sync data from MySQL to Elasticsearch.</p>
+<p style="text-align: justify;"><em>Note</em>: It is recommended not to use elasticsearch-rivers for syncing data. I will not go deeper into this. You can found a lot of information over the internet on this if you wish to know more about rivers.</p>
+<p style="text-align: justify;">Below is the step by step process of configuring the instances on Ubuntu machine. I am assuming that your primary data is already stored on the MySQL. The models structure of my table that I want to sync is as:</p>
+
+
+[caption id="attachment_137" align="aligncenter" width="450"]<img class="wp-image-137" src="http://www.cloudhack.in/wp-content/uploads/2016/06/mysql_table_schema.png" alt="MySQL Table Schema" width="450" height="175" /> MySQL Table Schema[/caption]
+<h2 style="text-align: justify;">Step 1: Install Elasticsearch</h2>
+[snippet id="40"]
+Open the URL: <code>http://<em>YOUR.ELASTIC.SERACH.IP</em>:9200</code>. If you do not see any response, check your logs at: <code>/var/log/elasticsearch/<em>CLUSTER_NAME</em>.log</code>
+<h2 style="text-align: justify;">Step 2: Setting up Logstash</h2>
+<p style="text-align: justify;">Will be updating soon once I have time. In case you are reading this and need quick update, please leave a comment I will try to update this faster. Thanks :)</p>

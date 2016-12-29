@@ -1,0 +1,88 @@
+There are various databases available these days. But the choice of database depends on what database or combination of databases best resolves your problem? Each database has its pros and cons. One of the major factor that decides the kind of database to be used is the kind of datastore you are dealing with.
+Database Examples
+Database Examples
+Based on datastore, databases are mainly categorized into:
+Relational
+Key-Value
+Columnar
+Document-oriented
+Graph
+Time Series
+While selecting a database, one should consider the following factors:
+Usability: How user-friendly the system will be for all those members of staff required to use it?
+Visualisation & Reporting: Review the ease of visually analysing and displaying results for any queries you run on your data, while making selections and deciding segments.
+Security: Security of your data is an essential aspect of any database implementation. Business-sensitive data and any personal information you hold must be stored securely to adhere to regulations and to protect it from loss or theft.
+Functionality: Confirm that the modules available in the data analysis software meet your business requirements.
+Support & Development: Think about the support service the software company offers for its solution. Is this available during the hours you are likely to need support? Is the support offered by email, phone, other?
+Integration: Does the system you are considering integrate with your other software systems such as your Email Marketing platform and CRM system?
+Scalability: Ensure that the system has the capacity to grow with your data and your business.
+Cost and Suitability: Whilst cost is obviously a factor in any business expenditure, it is wise to ensure that – as far as possible – your decision is based on the software being fit for purpose.
+Hosting: Where is your system going to be located (physically or cloud)? What will be its downtime and maintenance window?
+In this article we will keep our scope limited to the kind of database to be selected based on the datastore.
+Relational Databases
+Relational database management systems (RDBMSs) are set-theory-based systems implemented as two-dimensional tables with rows and columns.
+RDBMS store the data into collection of tables, which might be related by common fields (database table columns). RDBMS also provide relational operators to manipulate the data stored into the database tables. Most RDBMS use SQL as database query language. Importantly, tables can join and morph into new, more complex tables, because of their mathematical basis in relational (set) theory.
+There are lots of relational databases to choose from, like:
+MySQL (open-source)
+PostgreSQL (open-source)
+Oracle (enterprise)
+Microsoft SQL Server (enterprise)
+H2 (open-source)
+HSQLDB (open-source)
+SQLite (open-source)
+To view the list of all relational database available, check: List of relational database management systems.
+Key-Value Databases
+Key-value stores are probably the simplest form of database management systems. They can only store pairs of keys and values, as well as retrieve values when a key is known.
+These simple systems are normally not adequate for complex applications. On the other hand, it is exactly this simplicity, that makes such systems attractive in certain circumstances. For example resource-efficient key-value stores are often applied in embedded systems or as high performance in-process databases.
+Few examples of Key-Value databases are:
+Redis
+Memcached
+Amazon DynamoDB
+Riak KV
+Hazelcast
+Visit DB-Engines Ranking of Key-value Stores to get complete list of key-value based databases.
+Columnar Databases
+A columnar database, also known as a column-oriented database, is a database management system (DBMS) that stores data in columns rather than in rows as relational DBMSs. The main difference between a columnar database and a traditional row-oriented database are centered around performance, storage necessities and schema modifying techniques. The goal of a columnar database is to efficiently write and read data to and from hard disk storage and speed up the time it takes to return a query.
+One of the main benefits of a columnar database is that data can be highly compressed allowing columnar operations — like MIN, MAX, SUM, COUNT and AVG— to be performed very rapidly. Another benefit is that because a column-based DBMS is self-indexing, it uses less disk space than a relational database management system (RDBMS) containing the same data.
+Some of the common know columnar databases are:
+Google’s BigTable
+HBase
+Cassandra
+Amazon Redshift
+To get the list of all the columnar databases, visit: List of column-oriented DBMSes.
+Document-oriented Databases
+Document-oriented databases are inherently a subclass of the key-value store. The difference lies in the way the data is processed; in a key-value store the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document order to extract metadata that the database engine uses for further optimization. Although the difference is often moot due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques. XML databases are a specific subclass of document-oriented databases that are optimized to extract their metadata from XML documents. Graph databases are similar, but add another layer, the relationship, which allows them to link documents for rapid traversal.
+Few of the document-oriented databases are:
+CouchDB
+MongoDB
+Solr
+ElasticSearch
+Complete list of the available document-oriented databases in available at: Document-oriented database: Implementations.
+Graph Databases
+A graph database, also called a graph-oriented database, is a type of NoSQL database that uses graph theory to store, map and query relationships.
+A graph database is essentially a collection of nodes and edges. Each node represents an entity (such as a person or business) and each edge represents a connection or relationship between two nodes. Every node in a graph database is defined by a unique identifier, a set of outgoing edges and/or incoming edges and a set of properties expressed as key/value pairs. Each edge is defined by a unique identifier, a starting-place and/or ending-place node and a set of properties.
+Graph databases are well-suited for analyzing interconnections, which is why there has been a lot of interest in using graph databases to mine data from social media. Graph databases are also useful for working with data in business disciplines that involve complex relationships and dynamic schema, such as supply chain management, identifying the source of an IP telephony issue, etc.
+Some of the most highly rated Graph databases are:
+Neo4j
+OrientDB
+Titan
+Virtuoso
+AzrangoDB
+To see the ranking of all the Graph databases, check: DB-Engines Ranking of Graph DBMS.
+Time Series Databases
+Time Series Databases (TSDBs) are databases that are optimized for time series data. Software with complex logic or business rules and high transaction volume for time series data may not be practical with traditional relational database management systems. Flat file databases are not a viable option either, if the data and transaction volume reaches a maximum threshold determined by the capacity of individual servers (processing power and storage capacity). Queries for historical data, replete with time ranges and roll ups and arbitrary time zone conversions are difficult in a relational database.
+The TSDB allows users to create, enumerate, update and destroy various time series and organize them in some fashion. These series may be organized hierarchically and optionally have companion metadata available with them. The server often supports a number of basic calculations that work on a series as a whole, such as multiplying, adding, or otherwise combining various time series into a new time series. They can also filter on arbitrary patterns defined by the day of the week, low value filters, high value filters, or even have the values of one series filter another.
+Most widely used Time Series databases are:
+InfluxDB
+KairosDB
+OpenTSDB
+Visit: Time series database: Example TSDB Systems to get the complete list of Time Series based databases.
+Referrences
+Seven Databases in Seven Weeks: By Eric Redmond and Jim R. Wilson
+Top 10 considerations when choosing a Database Management system
+Database Dir: What is RDBMS?
+DB Engines: Key-Value Stores
+OpenText Analytics: Columnar Database
+Wikipedia: Document-oriented Database
+WhatIs: Graph Database
+Wikipedia: Time series database

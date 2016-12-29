@@ -1,0 +1,122 @@
+<p style="text-align: justify;">There are various databases available these days. But the choice of database depends on what database or combination of databases best resolves your problem? Each database has its pros and cons. One of the major factor that decides the kind of database to be used is the kind of <a href="https://en.wikipedia.org/wiki/Data_store" target="_blank">datastore</a> you are dealing with.</p>
+
+
+[caption id="attachment_97" align="aligncenter" width="300"]<img class="size-medium wp-image-97" src="http://www.cloudhack.in/wp-content/uploads/2016/04/databse_examples-300x190.jpg" alt="Database Examples" width="300" height="190" /> Database Examples[/caption]
+<p style="text-align: justify;">Based on datastore, databases are mainly categorized into:</p>
+
+<ol style="text-align: justify;">
+     <li>Relational</li>
+     <li>Key-Value</li>
+     <li>Columnar</li>
+     <li>Document-oriented</li>
+     <li>Graph</li>
+     <li>Time Series</li>
+</ol>
+<p style="text-align: justify;">While selecting a database, one should consider the following factors:</p>
+
+<ul style="text-align: justify;">
+     <li><strong>Usability</strong>: How user-friendly the system will be for all those members of staff required to use it?</li>
+     <li><strong>Visualisation &amp; Reporting</strong>: Review the ease of visually analysing and displaying results for any queries you run on your data, while making selections and deciding segments.</li>
+     <li><strong>Security</strong>: Security of your data is an essential aspect of any database implementation. Business-sensitive data and any personal information you hold must be stored securely to adhere to regulations and to protect it from loss or theft.</li>
+     <li><strong>Functionality</strong>: Confirm that the modules available in the data analysis software meet your business requirements.</li>
+     <li><strong>Support &amp; Development</strong>: Think about the support service the software company offers for its solution. Is this available during the hours you are likely to need support? Is the support offered by email, phone, other?</li>
+     <li><strong>Integration</strong>: Does the system you are considering integrate with your other software systems such as your Email Marketing platform and CRM system?</li>
+     <li><strong>Scalability</strong>: Ensure that the system has the capacity to grow with your data and your business.</li>
+     <li><strong>Cost and Suitability</strong>: Whilst cost is obviously a factor in any business expenditure, it is wise to ensure that – as far as possible – your decision is based on the software being fit for purpose.</li>
+     <li><strong>Hosting</strong>: Where is your system going to be located (physically or cloud)? What will be its downtime and maintenance window?</li>
+</ul>
+<p style="text-align: justify;">In this article we will keep our scope limited to the kind of database to be selected based on the datastore.</p>
+
+<h2 style="text-align: justify;"><strong>Relational Databases</strong></h2>
+<p style="text-align: justify;">Relational database management systems (RDBMSs) are set-theory-based systems implemented as two-dimensional tables with rows and columns.</p>
+<p style="text-align: justify;">RDBMS store the data into collection of tables, which might be related by common fields (database table columns). RDBMS also provide relational operators to manipulate the data stored into the database tables. Most RDBMS use SQL as database query language. Importantly, tables can join and morph into new, more complex tables, because of their mathematical basis in relational (set) theory.</p>
+<p style="text-align: justify;">There are lots of relational databases to choose from, like:</p>
+
+<ul style="text-align: justify;">
+     <li>MySQL (open-source)</li>
+     <li>PostgreSQL (open-source)</li>
+     <li>Oracle (enterprise)</li>
+     <li>Microsoft SQL Server (enterprise)</li>
+     <li>H2 (open-source)</li>
+     <li>HSQLDB (open-source)</li>
+     <li>SQLite (open-source)</li>
+</ul>
+<p style="text-align: justify;">To view the list of all relational database available, check: <a href="https://en.wikipedia.org/wiki/List_of_relational_database_management_systems" target="_blank">List of relational database management systems</a>.</p>
+
+<h2 style="text-align: justify;"><strong>Key-Value Databases</strong></h2>
+<p style="text-align: justify;">Key-value stores are probably the simplest form of database management systems. They can only store pairs of keys and values, as well as retrieve values when a key is known.</p>
+<p style="text-align: justify;">These simple systems are normally not adequate for complex applications. On the other hand, it is exactly this simplicity, that makes such systems attractive in certain circumstances. For example resource-efficient key-value stores are often applied in embedded systems or as high performance in-process databases.</p>
+<p style="text-align: justify;">Few examples of Key-Value databases are:</p>
+
+<ul style="text-align: justify;">
+     <li>Redis</li>
+     <li>Memcached</li>
+     <li>Amazon DynamoDB</li>
+     <li>Riak KV</li>
+     <li>Hazelcast</li>
+</ul>
+<p style="text-align: justify;">Visit <a href="http://db-engines.com/en/ranking/key-value+store" target="_blank">DB-Engines Ranking of Key-value Stores</a> to get complete list of key-value based databases.</p>
+
+<h2 style="text-align: justify;"><strong>Columnar Databases</strong></h2>
+<p style="text-align: justify;">A columnar database, also known as a column-oriented database, is a database management system (DBMS) that stores data in columns rather than in rows as relational DBMSs. The main difference between a columnar database and a traditional row-oriented database are centered around performance, storage necessities and schema modifying techniques. The goal of a columnar database is to efficiently write and read data to and from hard disk storage and speed up the time it takes to return a query.</p>
+<p style="text-align: justify;">One of the main benefits of a columnar database is that data can be highly compressed allowing columnar operations — like MIN, MAX, SUM, COUNT and AVG— to be performed very rapidly. Another benefit is that because a column-based DBMS is self-indexing, it uses less disk space than a relational database management system (RDBMS) containing the same data.</p>
+<p style="text-align: justify;">Some of the common know columnar databases are:</p>
+
+<ul style="text-align: justify;">
+     <li>Google’s BigTable</li>
+     <li>HBase</li>
+     <li>Cassandra</li>
+     <li>Amazon Redshift</li>
+</ul>
+<p style="text-align: justify;">To get the list of all the columnar databases, visit: <a href="https://en.wikipedia.org/wiki/List_of_column-oriented_DBMSes" target="_blank">List of column-oriented DBMSes</a>.</p>
+
+<h2 style="text-align: justify;"><strong>Document-oriented Databases</strong></h2>
+<p style="text-align: justify;">Document-oriented databases are inherently a subclass of the key-value store. The difference lies in the way the data is processed; in a key-value store the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document order to extract metadata that the database engine uses for further optimization. Although the difference is often moot due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques. <a title="XML database" href="https://en.wikipedia.org/wiki/XML_database">XML databases</a> are a specific subclass of document-oriented databases that are optimized to extract their metadata from XML documents. Graph databases are similar, but add another layer, the <i>relationship</i>, which allows them to link documents for rapid traversal.</p>
+<p style="text-align: justify;">Few of the document-oriented databases are:</p>
+
+<ul style="text-align: justify;">
+     <li>CouchDB</li>
+     <li>MongoDB</li>
+     <li>Solr</li>
+     <li>ElasticSearch</li>
+</ul>
+<p style="text-align: justify;">Complete list of the available document-oriented databases in available at: <a href="https://en.wikipedia.org/wiki/Document-oriented_database#Implementations" target="_blank">Document-oriented database: Implementations</a>.</p>
+
+<h2 style="text-align: justify;"><strong>Graph Databases</strong></h2>
+<p style="text-align: justify;">A graph database, also called a graph-oriented database, is a type of NoSQL database that uses graph theory to store, map and query relationships.</p>
+<p style="text-align: justify;">A graph database is essentially a collection of nodes and edges. Each node represents an entity (such as a person or business) and each edge represents a connection or relationship between two nodes. Every node in a graph database is defined by a unique identifier, a set of outgoing edges and/or incoming edges and a set of properties expressed as key/value pairs. Each edge is defined by a unique identifier, a starting-place and/or ending-place node and a set of properties.</p>
+<p style="text-align: justify;">Graph databases are well-suited for analyzing interconnections, which is why there has been a lot of interest in using graph databases to mine data from social media. Graph databases are also useful for working with data in business disciplines that involve complex relationships and dynamic schema, such as supply chain management, identifying the source of an IP telephony issue, etc.</p>
+<p style="text-align: justify;">Some of the most highly rated Graph databases are:</p>
+
+<ul style="text-align: justify;">
+     <li>Neo4j</li>
+     <li>OrientDB</li>
+     <li>Titan</li>
+     <li>Virtuoso</li>
+     <li>AzrangoDB</li>
+</ul>
+<p style="text-align: justify;">To see the ranking of all the Graph databases, check: <a href="http://db-engines.com/en/ranking/graph+dbms" target="_blank">DB-Engines Ranking of Graph DBMS</a>.</p>
+
+<h2 style="text-align: justify;"><strong>Time Series Databases</strong></h2>
+<p style="text-align: justify;">Time Series Databases (TSDBs) are databases that are optimized for time series data. Software with complex logic or business rules and high transaction volume for time series data may not be practical with traditional relational database management systems. Flat file databases are not a viable option either, if the data and transaction volume reaches a maximum threshold determined by the capacity of individual servers (processing power and storage capacity). Queries for historical data, replete with time ranges and roll ups and arbitrary time zone conversions are difficult in a relational database.</p>
+<p style="text-align: justify;">The TSDB allows users to create, enumerate, update and destroy various time series and organize them in some fashion. These series may be organized hierarchically and optionally have companion metadata available with them. The server often supports a number of basic calculations that work on a series as a whole, such as multiplying, adding, or otherwise combining various time series into a new time series. They can also filter on arbitrary patterns defined by the day of the week, low value filters, high value filters, or even have the values of one series filter another.</p>
+<p style="text-align: justify;">Most widely used Time Series databases are:</p>
+
+<ul style="text-align: justify;">
+     <li>InfluxDB</li>
+     <li>KairosDB</li>
+     <li>OpenTSDB</li>
+</ul>
+<p style="text-align: justify;">Visit: <a href="https://en.wikipedia.org/wiki/Time_series_database#Example_TSDB_Systems" target="_blank">Time series database: Example TSDB Systems</a> to get the complete list of Time Series based databases.</p>
+
+<h2 style="text-align: justify;">Referrences</h2>
+<ul>
+     <li style="text-align: justify;"><a href="https://pragprog.com/book/rwdata/seven-databases-in-seven-weeks" target="_blank">Seven Databases in Seven Weeks: By Eric Redmond and Jim R. Wilson</a></li>
+     <li style="text-align: justify;"><a href="https://datahq.co.uk/knowledge-centre/blog/top-10-considerations-when-choosing-a-database-management-system" target="_blank">Top 10 considerations when choosing a Database Management system</a></li>
+     <li style="text-align: justify;"><a href="http://www.databasedir.com/what-is-rdbms/" target="_blank">Database Dir: What is RDBMS?</a></li>
+     <li style="text-align: justify;"><a href="http://db-engines.com/en/article/Key-value+Stores" target="_blank">DB Engines: Key-Value Stores</a></li>
+     <li style="text-align: justify;"><a href="http://birtanalytics.actuate.com/columnar-database" target="_blank">OpenText Analytics: Columnar Database</a></li>
+     <li style="text-align: justify;"><a href="https://en.wikipedia.org/wiki/Document-oriented_database" target="_blank">Wikipedia: Document-oriented Database</a></li>
+     <li style="text-align: justify;"><a href="http://whatis.techtarget.com/definition/graph-database" target="_blank">WhatIs: Graph Database</a></li>
+     <li style="text-align: justify;"><a href="https://en.wikipedia.org/wiki/Time_series_database" target="_blank">Wikipedia: Time series database</a></li>
+</ul>

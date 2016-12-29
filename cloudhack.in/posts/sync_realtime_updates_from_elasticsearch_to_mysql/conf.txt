@@ -1,0 +1,7 @@
+URL Endpoint: mysql-logstash-and-elasticsearch-sync-realtime-geolocation-updates
+
+Title: Sync Realtime Updates from  MySQL to Elasticsearch using Logstash
+
+Description: Step by step process on how to sync updates on MySQL with Elasticsearch in real-time using Logstash. Also, the steps to secure Elasticsearch using Shield.
+
+Keywords: elasticsearch, mysql, logstash, shield,reatime updates, sync data,geolocation,coordinates

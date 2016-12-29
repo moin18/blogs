@@ -1,0 +1,61 @@
+<p style="text-align: justify;">Elasticsearch is an open-source, broadly-distributable, readily-scalable, enterprise-grade search engine. Accessible through an extensive and elaborate API, Elasticsearch can power extremely fast searches that support your data discovery applications.</p>
+<p style="text-align: justify;">ElasticSearch is able to achieve fast search responses because, instead of searching the text directly, it searches an index instead. This is like retrieving pages in a book related to a keyword by scanning the index at the back of a book, as opposed to searching every word of every page of the book. This type of index is called an <b>inverted index</b>, because it inverts a page-centric data structure (page-&gt;words) to a keyword-centric data structure (word-&gt;pages). ElasticSearch uses Apache Lucene to create and manage this inverted index.</p>
+
+<h2 style="text-align: justify;">ElasticSearch For Geolocations</h2>
+<p style="text-align: justify;">In this article we will keep our scope limited to the features provided by Elasticsearch for the geolocation data. The beauty of Elasticsearch is that it allows you to combine geolocation with full-text search, structured search, and analytics.</p>
+<p style="text-align: justify;">For instance: show me cabs that are of luxury type, are within a radius of 5 KM, and are having minimum fare, and then rank them by a combination of user rating. Another example: show me nearest hospital, opened at 11 P.M., and has emergency facility.</p>
+
+
+[caption id="attachment_117" align="aligncenter" width="300"]<img class="size-medium wp-image-117" src="http://www.cloudhack.in/wp-content/uploads/2016/05/elasticsearch_boundbox_example-300x165.png" alt="Elasticsearch Example" width="300" height="165" /> Implementation of Elasticsearch[/caption]
+<p style="text-align: justify;">For dealing with Geo data, ElasticSearch supports two data types:</p>
+
+<ul style="text-align: justify;">
+     <li><span class="emphasis"><em><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html" target="_blank">Geo-points</a></em></span> allow you to find points within a certain distance of another point, to calculate distances between two points for sorting or relevance scoring, or to aggregate into a grid to display on a map.</li>
+     <li><span class="emphasis"><em><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-shape.html" target="_blank">Geo-shapes</a></em></span>, on the other hand, are used purely for filtering. They can be used to decide whether two shapes overlap, or whether one shape completely contains other shapes.</li>
+</ul>
+<h2 style="text-align: justify;">Geo Point data type</h2>
+<p style="text-align: justify;">Fields of type <code class="literal">geo_point</code> accept latitude-longitude pairs, which can be used:</p>
+
+<ul style="text-align: justify;">
+     <li>to find geo-points within a <a class="link" title="Geo Bounding Box Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-query.html" target="_blank">bounding box</a>, within a certain <a class="link" title="Geo Distance Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html" target="_blank">distance</a> of a central point, within a <a class="link" title="Geo Polygon Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-polygon-query.html" target="_blank">polygon</a>, or within a <a class="link" title="Geohash Cell Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geohash-cell-query.html" target="_blank">geohash</a> cell.</li>
+     <li>to aggregate documents by <a class="link" title="GeoHash grid Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-geohashgrid-aggregation.html" target="_blank">geographically</a> or by <a class="link" title="Geo Distance Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-geodistance-aggregation.html" target="_blank">distance</a> from a central point.</li>
+     <li>to integrate distance into a document’s <a class="link" title="Function Score Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html" target="_blank">relevance score</a>.</li>
+     <li>to <a class="link" title="Geo Distance Sorting" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-sort.html#geo-sorting" target="_blank">sort</a> documents by distance.</li>
+</ul>
+<p style="text-align: justify;">There are four ways to specify a geo-point:</p>
+
+<ol style="text-align: justify;">
+     <li>Geo-point expressed as an object, with <code class="literal">lat</code> and <code class="literal">lon</code> keys.</li>
+     <li>Geo-point expressed as a string with the format: <code class="literal">"lat,lon"</code>.</li>
+     <li>Geo-point expressed as a geohash.</li>
+     <li>Geo-point expressed as an array with the format: [ <code class="literal">lon</code>, <code class="literal">lat</code>]</li>
+</ol>
+<p style="text-align: justify;">Refer <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html" target="_blank">Elasticsearch: Geo-Point</a> document for more information related to Geo-Points.</p>
+<p style="text-align: justify;"><strong>Note: </strong>String geo-points are ordered as <code class="literal">lat,lon</code>, while array geo-points are ordered as the reverse: <code class="literal">lon,lat</code>.</p>
+
+<h2 style="text-align: justify;">Geo Shape data type</h2>
+<p style="text-align: justify;">The <code class="literal">geo_shape</code> datatype facilitates the indexing of and searching with arbitrary geo shapes such as rectangles and polygons. It should be used when either the data being indexed or the queries being executed contain shapes other than just points. You can query documents using this type using <a class="link" title="GeoShape Query" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-shape-query.html" target="_blank">geo_shape Query</a>.</p>
+<p style="text-align: justify;">Refer <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-shape.html#geo-shape" target="_blank">Elasticsearch: Geo-Shapes</a> document for detailed information.</p>
+
+<h2 style="text-align: justify;">Geohashes</h2>
+<p style="text-align: justify;">Geohashes are a way of encoding <code class="literal">lat/lon</code> points as strings.<a id="id-1.8.4.2.3" class="indexterm" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html#id-1.8.4.2.3"></a><a id="id-1.8.4.2.4" class="indexterm" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html#id-1.8.4.2.4"></a> <a id="id-1.8.4.2.5" class="indexterm" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html#id-1.8.4.2.5"></a><a id="id-1.8.4.2.6" class="indexterm" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html#id-1.8.4.2.6"></a><a id="id-1.8.4.2.7" class="indexterm" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html#id-1.8.4.2.7"></a>The original intention was to have a URL-friendly way of specifying geolocations, but geohashes have turned out to be a useful way of indexing geo-points and geo-shapes in databases. Geohashes divide the world into a grid of 32 cells—4 rows and 8 columns—each represented by a letter or number.</p>
+<p style="text-align: justify;">Refer <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html" target="_blank">Elasticsearch: Geohashes</a> document for further information with examples.</p>
+
+<h2 style="text-align: justify;">Geo Aggregations</h2>
+<p style="text-align: justify;">Geo-aggregations can be used to cluster geo-points into more manageable buckets. For example: to present information to the user on a map. Three aggregations work with fields of type <code class="literal">geo_point</code>:</p>
+
+<ul style="text-align: justify;">
+     <li><a title="Geo Distance Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geo-distance-agg.html" target="_blank">geo_dista</a><a title="Geo Distance Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geo-distance-agg.html" target="_blank">nce</a>: Groups documents into concentric circles around a central point.</li>
+     <li><a title="Geohash Grid Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohash-grid-agg.html" target="_blank">g</a><a title="Geohash Grid Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohash-grid-agg.html" target="_blank">eohash_grid</a>: Groups documents by geohash cell, for display on a map.</li>
+     <li><a title="Geo Bounds Aggregation" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geo-bounds-agg.html" target="_blank">geo_bounds</a>: Returns the lat/lon coordinates of a bounding box that would encompass all of the geo-points. This is useful for choosing the correct zoom level when displaying a map.</li>
+</ul>
+Check: <a href="http://www.cloudhack.in/index.php/2016/06/07/mysql-logstash-and-elasticsearch-sync-realtime-geolocation-updates/" target="_blank">MySQL, Logstash and Elasticsearch: Sync Realtime Geolocation Updates</a> to know more on how to sync realtime updating data in MySQL with Elasticsearch.
+<h2 style="text-align: justify;">Referrences</h2>
+<ul style="text-align: justify;">
+     <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html" target="_blank">Elasticsearch: Geo-Point</a></li>
+     <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-shape.html#geo-shape" target="_blank">Elasticsearch: Geo-Shapes</a></li>
+     <li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/geohashes.html" target="_blank">Elasticsearch: Geohashes</a></li>
+     <li><a href="https://qbox.io/blog/what-is-elasticsearch" target="_blank">What is Elasticsearch?</a></li>
+     <li><a href="http://www.elasticsearchtutorial.com/basic-elasticsearch-concepts.html" target="_blank">Basic Elastic search concepts?</a></li>
+</ul>
+<p style="text-align: justify;"></p>

@@ -1,0 +1,60 @@
+In the public cloud arena there are three dominant players; Amazon Web Services, Microsoft Azure and Google Cloud Platform. Each offers slightly different services to the other, but they also overlap in many areas and directly compete on price.
+The strengths and weaknesses of each can be key factors for you as a business looking to go down the cloud path. All three of them can be tried out on a small scale, through a proof of concept, so that you can compare the services and see which suits your needs the best.
+However, because of their size, it can often be difficult to effectively compare what services are better suited to your requirements. Let’s compare these three big players by service category:
+Compute
+Storage
+Networking,
+Pricing structure.
+But before reaching there, let's compare the services offered by these cloud giants.
+AWS
+The quantity and quality of the services available on AWS is extremely broad and wide, and it builds up a huge set of opportunities for many different needs. There are specific tools for media transcoding and Streaming, a managed Directory Service, 4 different relational and NoSQL databases, and even a Desktops in the Cloud service that provides remote Windows desktops. The various services are really well integrated, and they provide a very comprehensive cloud service. If you don’t mind locking yourself into a single vendor, AWS has no rivals with regard to the completeness of its platform and the productivity level that you can reach thanks to it.
+AWS Services
+AWS Services
+Google Cloud Platform
+On the other side, Google Cloud Platform’s list of product is way smaller, and mostly focused on classic IaaS and PaaS services. The latter is probably the area where Google focused most of its efforts, given that Google App Engine has been the first service ever launched in GCP. Nevertheless, you can find the usual IaaS computing, object storage, relational and non relational databases too, and a few more sertvices for DNS and Endpoints. The difference among the two competitors is huge here. How much it impacts on your architecture mostly depends on what your needs are. Chances are that the services provided by GCP can suffice for most common needs, and as we will see very soon, Google Compute Engine has many strength and pros that AWS is lacking.
+Google Services
+Google Services
+Windows Azure
+Microsoft introduced their compute service as a preview in 2012, but didn’t make it generally available until May 2013.  Azure users choose a VHD (Virtual Hard Disk), which is equivalent to Amazon’s AMI, to create a VM. A VHD can be either predefined by Microsoft, by third parties, or be user-defined. With each VM, you need to specify the number of cores and amount of memory. Azure isn’t anywhere near the size of AWS, but Microsoft has been working hard to match Amazon’s services and flexibility. For example in early 2014 Azure begun offering the data storage redundancy across data center regions – a feature dubbed Zone Redundant Storage (ZRS). It also introduced a new ‘Basic’ service level that removes auto-scaling and load balancing for those clients who don’t require such services, such as those running test environments and batch processing applications. For Windows-centric development or hosting, Azure offers slightly better options – Visual Studio, .NET and Windows programming languages such as VB and Visual C++ are all fully supported and well integrated.
+Windows Azure Services
+Windows Azure Services
+This was the brief overview of these giant cloud players. Now it is the time to focus on the comparison between the services offered by them.
+Comparison: Compute
+AWS’s EC2 (Elastic Compute Cloud) provides Amazon’s core compute service, allowing users to configure virtual machines using either pre-configured or custom AMIs (machine images). You select the size, power, memory capacity, and number of VMs and choose from among different regions and availability zones within which to launch. EC2 also allows load balancing (ELB) and auto scaling. ELB distributes loads across instances for better performance, and auto scaling allow users to automatically scale available EC2 capacity up or down.
+In 2012, Google introduced their computing cloud service: Google Compute Engine (GCE). Google Compute Engine lets users launch virtual machines, much like AWS, into regions and availability groups. However GCE didn’t become available for everyone until 2013.  Since then Google has added its own enhancements, like load balancing, extended support for Operating Systems, live migration of VMs, faster persistent disks, and instances with more cores.
+Also in 2012, Microsoft introduced their compute service as a preview, but didn’t make it generally available until May 2013.  Azure users choose a VHD (Virtual Hard Disk), which is equivalent to Amazon’s AMI, to create a VM. A VHD can be either predefined by Microsoft, by third parties, or be user-defined. With each VM, you need to specify the number of cores and amount of memory.
+Compute Comparison
+Compute Comparison
+Comparison: Storage and databases
+AWS provides ephemeral (temporary) storage that is allocated once an instance is started and is destroyed when the instance is terminated. It provides Block Storage that is equivalent to hard disks, in that it can either be attached to any instance or kept separate. AWS also offers object storage with their S3 Service, and archiving services with Glacier. AWS fully supports relational and NoSQL databases and Big Data.
+Google’s Cloud Platform similarly provides both temporary storage and persistent disks. For Object storage, GCP has Google Cloud Storage. GCP supports relational DBs through Google Cloud SQL. Technologies pioneered by Google, like Big Query, Big Table, and Hadoop, are naturally fully supported. Google’s Nearline offers archiving as cheap as Glacier, but with virtually no latency on recovery.
+Azure uses temporary storage (D drive) and Page Blobs (Microsoft’s Block Storage option) for VM-based volumes. Block Blobs and Files serve for Object Storage. Azure supports both relational and NoSQL databases, and Big Data, through Windows Azure Table and HDInsight.
+Storage Comparison
+Storage Comparison
+Comparison: Networking
+Amazon’s Virtual Private Clouds (VPCs) and Azure’s Virtual Network (VNET) allow users to group VMs into isolated networks in the cloud. Using VPCs and VNETs, users can define a  network topology, create subnets, route tables, private IP address ranges, and network gateways. There’s not much to choose between AWS vs Azure on this: they both have solutions to extend your on-premise data center into the public (or hybrid) cloud. Each Google Compute Engine instance belongs to a single network, which defines the address range and gateway address for all instances connected to it. Firewall rules can be applied to an instance, and it can receive a public IP address.
+AWS is unique in providing Route 53, a DNS web service.
+Networking Comparison
+Networking Comparison
+Comparison: Pricing Structure
+AWS charges customers by rounding up the number of hours used, so the minimum use is one hour. AWS instances can be purchased using any one of three models:
+on demand – customers pay for what they use without any upfront cost
+reserved – customers reserve instances for 1 or 3 years with an upfront cost that is based on the utilization
+spot – customers bid for the extra capacity available
+GCP charges for instances by rounding up the number of minutes used, with a minimum of 10 minutes. Google recently announced new sustained-use pricing for compute services that will offer a simpler and more flexible approach to AWS’s reserved instances. Sustained-use pricing will discount the on-demand baseline hourly rate automatically as a particular instance is used for a larger percentage of the month.
+Azure charges customers by rounding up the number of minutes used for on demand. Azure also offers short-term commitments with discounts.
+Pricing Comparison
+Pricing Comparison
+Summary
+AWS v/s GCP v/s Azure Comparison
+AWS v/s GCP v/s Azure Comparison
+Conclusion
+One area where Google is particularly strong is Big Data, though. It comes as no surprise that a company like Google could profuse all of its experience in the area making some excellent products. And BigQuery really is, by the way. It allows you to analyze massive amounts of data in a really short time, even providing real-time insights about your datasets. And quite surprisingly for such a complex service, it’s also easy to get started with it.
+I’m personally fond of AWS, and that would probably be my favourite choice, mostly because of the large variety of services available there. Nevertheless, I had a chance to play a little bit with GCE recently, and I’ve been impressed by the clean interface of the management console and by the bonus features I wrote you about. I don’t think I’d suggest anybody to migrate away from AWS, but there might be many cases where GCP can provide a better alternative to AWS. As always, it’s all about what you need to do, how you want to do it, what are your limits and constraints.
+Referrences
+Cloud Academy: Public Cloud War AWS v/s Azure v/s Google
+AWS v/s Google Cloud v/s Microsoft Azure How Do They Compare And Which One Is Right For Your Business
+Cloudamize: Cloud Comparison Matrix
+Cloud Academy: Google Cloud v/s AWS A Comparison
+Upguard: AWS v/s Azure
+ 

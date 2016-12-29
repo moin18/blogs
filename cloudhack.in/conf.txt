@@ -1,0 +1,13 @@
+Theme: 
+  - Graphene  <
+  - Ribosome
+
+Plugins: 
+  - Advanced Custom Fields
+  - Akismet
+  - All In One SEO Pack
+  - Backup
+  - Code Prettify
+  - Code Snippet Library
+  - Jetpack by WordPress.com
+  - Regenerate Thumbnails

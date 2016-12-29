@@ -1,0 +1,5 @@
+The aim behind creation of Cloud Hack is to provide a platform to help people with cloud related technologies.
+Moinuddin
+Moinuddin
+Cloud Hack is created by Moinuddin Quadri who is currently working as a Senior Software Engineer with Glydel Tech. He was the ex-member of the development team of AWS Aurora: fully MySQL compatible Relational Database Engine launched by Amazon in 2015.
+Moinuddin is a technology enthusiast and a huge Python lover. He is specialized in various IaaS platforms like AWS, Google Cloud Platform, and Azure. He is having hands on experience in various open-source technologies/tools like: Apache Kafka, ElasticSearch, Haystack, Celery, RabbitMQ, Zookeeper, Django's Rest Framework, Redis, Logstash, etc.

@@ -1,0 +1,7 @@
+URL endpoint: databases-at-a-glance-datastore-based-categorization
+
+Title: Databases at a Glance: Datastore Based Categorization
+
+Description: Based on datastore, databases are mainly categorized into: Relational, Key-Value, Columnar, Document-oriented, Graph, and Time Series. Examples: MySQL, PostgreSQL, Redis, Memcached, Cassandra, Google's Big Table, ElasticSearch, MongoDB, Neo4j, InfluxDB, etc.
+
+Keywords: database, datastore, relational, column oriented, graph, time series, key value, columnar, MySQL, PostgreSQL, Redis, Memcached, Cassandra, Google's Big Table, ElasticSearch, MongoDB, Neo4j, InfluxDB
