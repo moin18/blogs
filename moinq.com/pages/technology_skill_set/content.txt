@@ -1,0 +1,15 @@
+iLanguages:            Python, Java, BASH/shell scripting, C, SQL
+Frameworks:         Django
+IaaS Platforms:      AWS, Google Cloud Platform, Microsoft Azure
+Web Servers:         Apache, Nginx
+Queuing Brokers: Kafka, RabbitMQ
+Databases:             MySQL, SQL Server 2012, Aurora
+Inmemory Database: Redis
+Search Server:       Elasticsearch
+Data Pipeline:        Logstash
+Server Logging:     ELK (Elasticsearch, Logstash, Kibana)
+Python Libraries:  Celery, HayStack, Rest Framework, RPyC
+Server Monitoring: Cloud Watch, Monit, Stack Driver, Supervisor
+Technologies:        RPC, Android (Basic)
+Version Control:    Git, TFS
+Operating Systems: Linux (Ubuntu, CentOS), Windows

@@ -1,0 +1,19 @@
+
+profile for Moinuddin Quadri at Stack Overflow, Q&A for professional and enthusiast programmers
+Senior Software Engineer - Cloud Technologies
+
+
+
+Currently working with Glydel Tech on product OneFleet which is IoT based ERP application aimed at providing local cab companies a platform to fight against OLA/Uber. Earlier I have worked with Amazon as the part of performance and testing team of RDS Aurora which is fully MySQL compatible relational database engine now available with RDS family of AWS.
+
+
+
+Brief summary
+
+Technology enthusiast and a huge Python lover.
+Having 2.5+ years work experience of designing and building scalable architecture, and writing REST APIs on Django framework.
+Specialized in various IaaS platforms like AWS, Google Cloud Platform, and Azure.
+Hands on experience in various open-source technologies/tools like: Apache Kafka, Elastic Search, Haystack, Celery, RabbitMQ, Zookeeper, Django's Rest Framework, etc.
+
+
+Click on Menu icon to know more about me.

@@ -1,0 +1,7 @@
+URL Endpoint: technology-skill-set
+
+Title: Technology Skill Set
+
+Description: List of Web Server, Queing Servers, Iaas Platforms, Programming Languages, Databases, Open Source Tools/Technologies, Server Monitoring Moinuddin Quadri is familiar with.
+
+Keywords: Python, Java, BASH/shell scripting, C, SQL, Django, AWS, Google Cloud Platform, Microsoft Azure, RPC, Android, Apache, Nginx, Kafka, RabbitMQ, MySQL, SQL Server 2012, Aurora, Elastic Search, ELK, Logstash, Kibana, Celery, HayStack, Rest Framework, RPyC, Cloud Watch, Monit, Git, TFS, Linux, Ubuntu, CentOS, Windows

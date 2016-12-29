@@ -1,0 +1,7 @@
+URL Endpoint: .
+
+Title: Moinuddin Quadri
+
+Descritpion: 
+
+Keywords: python, django, aws, mysql, kafka, elasticsearch, google cloud platform, gcp, celery, haystack, ec2, cloud, rest api, 

@@ -1,0 +1,7 @@
+URL Endpoint: projects
+
+Title: Projects
+
+Description: Moinuddin Quadri is currently working as Senior Software with Glydel Tech on product OneFleet which is IoT based ERP application. Before joining Glydel, he was working with Amazon as the part of performance and testing team of RDS Aurora which is fully MySQL compatible relational database engine.
+
+Keywords: python, django, aws, cloud, apache, nginx, job, google cloud platform, mysql, aurora, iot

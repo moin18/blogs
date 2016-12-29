@@ -1,0 +1,49 @@
+OneFleet
+
+(Feb 2015 - Present)
+
+Description
+
+OneFleet is a IoT based ERP application aimed at providing local cab companies a platform to fight against OLA/Uber.
+
+OneFleet is available as web and mobile application.
+
+Using the web application, cab company staff can track their vehicles, manage their driver and vehicle inventory, manage end to end bookings, check vehicle's health, etc. OneFleet provides smart tracking, that means, apart from vehicle's geo location, cab company staff can also track the current speed of vehicle, get notification on accidents, high acceleration, over speeding, fatigue driving, etc.
+OneFleet is available in the form of two Android Application. One application is for drivers in which they can manage and keep track of their bookings. Another application is for passenger via which vehicle can be booked.
+Used Technology Set
+
+Python, Django Rest Framework, MySQL, Apache Kafka, Elastic Search, RabbitMQ, Celery, Haystack,Apache, Nginix, AWS, Google Cloud Platform.
+
+Role
+
+Senior Software Engineer - Backend + Cloud
+
+Work Description
+
+Design and architect private cloud hosted over AWS and Google Cloud Platform.
+Configure the servers and the associated tools/libraries for high availability.
+Write Rest APIs for the mobile and web application (using Django's Rest Framework).
+Integration of SMS gateway, Google Map APIs and other libraries (like celery, haystack) with our application.
+AWS Aurora
+
+(Jan 2014 - Feb 2015)
+
+Description
+
+Amazon Aurora is a MySQL-compatible relational database engine that combines the speed and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases. Amazon Aurora provides up to five times better performance than MySQL with the security, availability, and reliability of a commercial database at one tenth the cost.
+
+Used Technology Set
+
+Python, C, BASH (shell scripting), Java, AWS (EC2, SWF, DynamoDB), MySQL
+
+Role
+
+Softwate Engineer - Member of performance team
+
+Work Description
+
+Automation of cluster creation.
+Implement replication over distributed system.
+Ensure compatibility with Mysql 5.6.
+Performance Bench-marking using SysBench.
+Check fault tolerance under high workloads using RandGen

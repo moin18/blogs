@@ -1,0 +1,11 @@
+Theme:
+  - Latte  <
+  - Enliven
+
+Plugins:
+  - Advanced Custom Fields
+  - Akismet
+  - All In One SEO Pack
+  - Backup
+  - Jetpack by WordPress.com
+  - Regenerate Thumbnails
